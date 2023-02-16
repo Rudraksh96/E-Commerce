@@ -12,12 +12,11 @@ import { CartService } from 'src/app/service/cart.service';
 export class HeaderComponent implements OnInit {
   cartIcon=faShoppingCart;
 public totalItem:number=0;
-username;
 
 
-constructor(private cartService:CartService,private logincomp:LoginComponent){
-  this.logincomp.profileInfo.getValue()
-}
+constructor(private cartService:CartService){}
+//   this.logincomp.profileInfo.getValue()
+// }
 
 ngOnInit(): void {
   this.cartService.getProducts()

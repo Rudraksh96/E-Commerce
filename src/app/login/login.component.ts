@@ -2,8 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { BehaviorSubject } from 'rxjs';
-import { AuthService } from '../authentication/auth.service';
+// import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -11,15 +10,15 @@ import { AuthService } from '../authentication/auth.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  profileInfo = new BehaviorSubject({
-    username:' '
-  });
+  // profileInfo = new BehaviorSubject({
+  //   username:' '
+  // });
   loginObj: any = {
     email: '',
     password: ''
   };
   loginForm!: FormGroup; //declare to login forms by giving the type formgroup
-  constructor(private fb: FormBuilder, private router: Router, private toastr: ToastrService , private authService:AuthService) { }//inject formbuilder
+  constructor(private fb: FormBuilder, private router: Router, private toastr: ToastrService) { }//inject formbuilder
 
   ngOnInit(): void {
     this.loginForm = this.fb.group({
@@ -38,14 +37,14 @@ export class LoginComponent {
 
       if (username === sessionStorage.getItem('user') && password === sessionStorage.getItem('pass')) {
         console.log("login sucessful");
-        sessionStorage.setItem('isLoggedIn',"true");
-        // sessionStorage.setItem('token',this.loginForm.use)
-        this.profileInfo.next({
-          username:this.loginForm.value.username
-        })
         this.toastr.success("Welcome to Home Page");
         this.router.navigate(['./home']);
-        this.authService.IsLoggedOut();
+        // sessionStorage.setItem('isLoggedIn',"true");
+        // sessionStorage.setItem('token',this.loginForm.use)
+        // this.profileInfo.next({
+        //   username:this.loginForm.value.username
+        // })
+    
         
       }
       else {
