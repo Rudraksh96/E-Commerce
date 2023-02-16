@@ -1,13 +1,16 @@
 <app-header></app-header>
-<h1 style="color: rgb(8, 8, 8); text-align: center; ">Products</h1>
+<h1 style="color: rgb(8, 8, 8); text-align: center; margin-top:110px; ">Products</h1>
 <div class="centered" *ngIf="showloader">
   <h1>Loading...</h1>
 </div>
+<div class="container"><div class="col-md-6 col-md-offset-3 loginBox">    
+  Welcome,  {{username}}    
+  <a href="javascript:void(0);">Logout</a></div></div>
 <div class="container">
   <div class="row">
       <ng-container *ngFor="let item of allproducts">
           <div class="card col-md-3">
-              <img src="{{item.thumbnail}}" alt="image">
+              <img src="{{item.thumbnail}}" class="mx-auto" alt="image">
               <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.title}}</h5>
               <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.description}}</p>
               <p><strong>Price:</strong> ${{item.price}}</p>

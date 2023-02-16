@@ -1,12 +1,9 @@
 <div class="signupbox"> <img src="https://i.imgur.com/ZYzTdD0.png" class="avatar">
     <h1>Signup Here</h1>
     <form [formGroup]="signupForm">
-        <p>Firstname</p> 
-        <input formControlName="firstname" type="text" name="" placeholder="Enter Firstname">
-        <small *ngIf="signupForm.controls['firstname'].dirty && signupForm.hasError('required','firstname')" class="text-danger">*Firstname is required</small>
-        <p>Lastname</p> 
-        <input formControlName="lastname" type="text" name="" placeholder="Enter Lastname">
-        <small *ngIf="signupForm.controls['lastname'].dirty && signupForm.hasError('required','lastname')" class="text-danger">*lastname is required</small>
+        <p>Fullname</p> 
+        <input formControlName="fullname" type="text" name="" placeholder="Enter Fullname">
+        <small *ngIf="signupForm.controls['fullname'].dirty && signupForm.hasError('required','firstname')" class="text-danger">*Fullname is required</small>
         <p>Username</p> 
         <input formControlName="username" type="text" name="" placeholder="Enter Username" >
         <small *ngIf="signupForm.controls['username'].dirty && signupForm.hasError('required','username')" class="text-danger">*Username is required</small>

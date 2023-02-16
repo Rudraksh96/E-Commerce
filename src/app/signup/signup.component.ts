@@ -18,8 +18,7 @@ export class SignupComponent {
 
   ngOnInit(): void {
     this.signupForm = this.fb.group({
-      firstname: ['', Validators.required],
-      lastname: ['', Validators.required],
+      fullname: ['', Validators.required],
       username: ['', Validators.required],
       email: ['', Validators.required],
       password: ['', Validators.required]
@@ -31,8 +30,8 @@ export class SignupComponent {
 
       const username = this.signupForm.value.username;
       const password = this.signupForm.value.password;
-      localStorage.setItem('user', username);
-      localStorage.setItem('pass', password);
+      sessionStorage.setItem('user', username);
+      sessionStorage.setItem('pass', password);
       this.toastr.success("Registration Sucessful");
       this.route.navigate(['./login']);
 

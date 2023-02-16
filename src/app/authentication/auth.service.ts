@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Login } from '../interface/login';
 
 @Injectable({
   providedIn: 'root'
@@ -6,7 +7,12 @@ import { Injectable } from '@angular/core';
 export class AuthService {
 
   constructor() { }
-IsLoggedIn(){
-  return !!(localStorage.getItem('user') && localStorage.getItem('pass'))
+// IsLoggedIn(){
+//   return !!(sessionStorage.getItem('user') && sessionStorage.getItem('pass'))
+// }
+IsLoggedOut():void
+{
+sessionStorage.setItem('IsLoggedIn','false');
+sessionStorage.removeItem('token');
 }
 }
