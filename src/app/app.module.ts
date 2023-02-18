@@ -20,6 +20,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { ToastrModule } from 'ngx-toastr';
 import { AuthGuard } from './auth/auth.guard';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { AuthGuard } from './auth/auth.guard';
     ContactUsComponent,
     TestimonialComponent,
     FooterComponent,
-    AddcartComponent
+    AddcartComponent,
+    ProductDetailComponent
   ],
   imports: [
     BrowserModule,

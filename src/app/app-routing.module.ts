@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AboutUsComponent } from './about-us/about-us.component';
 import { AddcartComponent } from './addcart/addcart.component';
 import { AuthGuard } from './auth/auth.guard';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { SignupComponent } from './signup/signup.component';
 import { TestimonialComponent } from './testimonial/testimonial.component';
 
@@ -23,7 +23,7 @@ path:'',redirectTo:'login',pathMatch:'full'
     path:"home",canActivate:[AuthGuard],component:HomeComponent
   },
   {
-    path:"aboutUs",canActivate:[AuthGuard],component:AboutUsComponent
+    path:"details/:productId",canActivate:[AuthGuard],component:ProductDetailComponent
   },
   {
     path:"contactUs",canActivate:[AuthGuard],component:ContactUsComponent

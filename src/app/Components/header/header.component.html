@@ -1,20 +1,51 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-primary fixed-top">
-  <div class="container">
-    <!-- <a class="navbar-brand">E-Commerce</a> -->
-      <div class="navbar-brand">
-    <a routerLink="/home" style="text-decoration: none;font-size: 20px; color: white;">E-Commerce</a>
+  <!-- <a class="navbar-brand">E-Commerce</a> -->
+
+
+  <div class="mobile-view">
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-12">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <i class="fa fa-bars"></i>
+          </button>
+          <span class="navbar-brand">
+            <a routerLink="/home"
+              style="text-decoration: none; margin-left:10px;font-size: 20px; color: white;">E-Commerce</a>
+          </span>
+
+          <span class="navbar-brand">
+            <a routerLink="/login"
+              style="text-decoration: none; margin-left:10px;font-size: 20px; color: white;">Login</a>
+          </span>
+
+          <span>
+            <button routerLink="/addtocart" class="btn btn-primary">
+              <fa-icon style="font-size: 20px; color:white;" [icon]="cartIcon"></fa-icon>
+              <div style="font-size: 10px;" class="badge bg-danger" *ngIf="totalItem>0">{{totalItem}}</div>
+            </button>
+          </span>
+        </div>
+
+
+
+
+      </div>
     </div>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+
+
+
+    <div class="collapse navbar-collapse " id="navbarSupportedContent">
       <ul class="navbar-nav mx-auto mb-2">
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" routerLink="/home" style="color: white;">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/aboutUs" style="color: white;">About Us</a>
+          <a class="nav-link" routerLink="/details/1" style="color: white;">Product Details</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" routerLink="/testimonial" style="color: white;">Testimonial</a>
@@ -23,12 +54,54 @@
           <a class="nav-link" routerLink="/contactUs" style="color: white;">Contact Us</a>
         </li>
       </ul>
-
-  
     </div>
   </div>
-  <button routerLink="/addtocart" class="btn btn-primary">
-    <fa-icon style="font-size: 20px; color:white;"  [icon]="cartIcon"></fa-icon>
-    <div style="font-size: 10px;" class="badge bg-danger" *ngIf="totalItem>0">{{totalItem}}</div>
-  </button>
-  </nav>
+
+
+  <div class="desktop-view">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2 pd-2">
+          <span class="navbar-brand">
+            <a routerLink="/home"
+              style="text-decoration: none; margin-left:10px;font-size: 20px; color: white;">E-Commerce</a>
+          </span>
+        </div>
+        <div class="col-md-7">
+          <div class="collapse navbar-collapse " id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto mb-2">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" routerLink="/home" style="color: white;">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/details/1" style="color: white;">Product Details</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/testimonial" style="color: white;">Testimonial</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/contactUs" style="color: white;">Contact Us</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-3 pd-2">
+          <span class="navbar-brand">
+            <a routerLink="/home"
+              style="text-decoration: none; margin-left:10px;font-size: 20px; color: white;">Login</a>
+          </span>
+          <span>
+          <button routerLink="/addtocart" class="btn btn-primary" style="float:right">
+            <fa-icon style="font-size: 20px; color:white;" [icon]="cartIcon"></fa-icon>
+            <div style="font-size: 10px;" class="badge bg-danger" *ngIf="totalItem>0">{{totalItem}}</div>
+          </button>
+          </span>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+
+</nav>

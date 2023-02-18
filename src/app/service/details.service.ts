@@ -1,18 +1,18 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {ProductsInfo} from '../interface/products.interface';
+import { ProductsInfo } from '../interface/products.interface';
 import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ProductService {
- url="https://dummyjson.com/products";
+export class DetailsService {
+  url="https://dummyjson.com/products/1";
   constructor(private http:HttpClient) { }
 
-
-  products(): Observable<ProductsInfo> {
+  
+    id(): Observable<ProductsInfo> {
     return this.http
       .get<ProductsInfo>(this.url)
       .pipe(retry(1), catchError(this.handleError));
@@ -32,7 +32,4 @@ export class ProductService {
       return errorMessage;
     });
   }
-
 }
-
-

@@ -1,16 +1,41 @@
 .nav-link{
-    transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
 }
 .nav-link:hover,
 nav-link:focus {
-  background-color: rgb(15, 248, 193);
-  color: #333;
+background-color: rgb(15, 248, 193);
+color: #333;
 }
 .btn{
-  transition: all 0.5s ease-out;
+transition: all 0.5s ease-out;
 }
 .btn:hover,
 btn:focus {
-  background-color: rgb(15, 248, 193);
-  color: #333;
+background-color: rgb(15, 248, 193);
+color: #333;
+}
+
+@media screen and (max-width: 900px) {
+.mobile-view{
+  display: block;
+}
+.desktop-view{
+  display: none;
+}
+.navbar-toggler{
+  border: none;
+  color: white;
+}
+}
+
+@media only screen and (min-width: 481px) and (max-width: 1700px) {
+/* For portrait layouts only */
+.mobile-view{
+  display: none;
+}
+.desktop-view{
+  display: block;
+  width: 100%;
+}
+
 }

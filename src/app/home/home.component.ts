@@ -14,9 +14,7 @@ export class HomeComponent
 
   showloader:boolean=false;
   allproducts:any =[];
-  constructor (public product:ProductService,private cartService:CartService,private authService:AuthService, private router:Router){
-   
-  }
+  constructor (public product:ProductService,private cartService:CartService,private authService:AuthService, private router:Router){}
 
   ngOnInit(): any{
     // this.username=sessionStorage.getItem('token');
